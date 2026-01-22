@@ -1,14 +1,40 @@
 '''
-generate a python code to convert binary number to decimal
+indian Zodiac Order
+March → Mesha
+April → Vrishabha
+May → Mithuna
+June → Karka
+July → Simha
+August → Kanya
+September → Tula
+October → Vrischika
+November → Dhanu
+December → Makara
+January → Kumbha
+February → Meena
+diaply the zodiac sign based on the month input by the user.
 '''
-def binary_to_decimal(binary_str):
-    decimal_value = 0
-    binary_str = binary_str[::-1]  # Reverse the string to process from least significant bit
-    for index, digit in enumerate(binary_str):
-        if digit == '1':
-            decimal_value += 2 ** index
-    return decimal_value
-# Example usage
-binary_input = input("Enter a binary number: ")
-decimal_output = binary_to_decimal(binary_input)
-print(f"The decimal value of binary {binary_input} is {decimal_output}.")
+
+def get_zodiac_sign(month):
+    zodiac_signs = {
+        "March": "Mesha",
+        "April": "Vrishabha",
+        "May": "Mithuna",
+        "June": "Karka",
+        "July": "Simha",
+        "August": "Kanya",
+        "September": "Tula",
+        "October": "Vrischika",
+        "November": "Dhanu",
+        "December": "Makara",
+        "January": "Kumbha",
+        "February": "Meena"
+    }
+    return zodiac_signs.get(month, None)
+
+month = input("Enter the month: ")
+sign = get_zodiac_sign(month)
+if sign:
+    print(f"The zodiac sign for {month} is {sign}")
+else:
+    print("Invalid month")

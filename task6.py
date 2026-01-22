@@ -1,18 +1,19 @@
 '''
-a=18
-display as harshad number if it is  or not a harshad number
-b=21
-display as harshad number if it is  or not a harshad number
-c=19
-display as harshad number if it is  or not a harshad number
+read persons age.
+if he above 18 then he is eligible to vote.
+if he is below 18 then he is not eligible to vote.
 '''
-def is_harshad_number(num):
-    digit_sum = sum(int(digit) for digit in str(num))
-    return num % digit_sum == 0
-numbers = [18, 21, 19]
-for number in numbers:
-    if is_harshad_number(number):
-        print(f"{number} is a Harshad number.")
-    else:
-        print(f"{number} is not a Harshad number.")
-        
+def main():
+    try:
+        age = int(input("Enter your age: "))
+        if age >= 18:
+            print("You are eligible to vote.")
+        elif 0 <= age < 18:
+            print("You are not eligible to vote.")
+        else:
+            print("Invalid age! Age cannot be negative.")
+    except ValueError:
+        print("Invalid input! Please enter a numeric value.")
+if __name__ == "__main__":
+    main()
+    
